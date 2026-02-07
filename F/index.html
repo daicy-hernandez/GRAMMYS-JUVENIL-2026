@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAMMYS JUVENILES CRISTIANOS 2026</title>
+    <style>
+        :root {
+            --oro: #d4af37;
+            --negro: #0a0a0a;
+            --gris: #1a1a1a;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--negro);
+            color: var(--blanco);
+            margin: 0;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        header {
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--oro);
+            background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+        }
+
+        h1 { color: var(--oro); font-size: 2.2rem; text-transform: uppercase; margin: 0; }
+        
+        .subtema {
+            font-style: italic;
+            color: #bdc3c7;
+            margin-top: 10px;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SECCIÓN DE REGISTRO OBLIGATORIO */
+        .registro-obligatorio {
+            background: #222;
+            padding: 25px;
+            border: 2px solid var(--oro);
+            border-radius: 15px;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        .registro-obligatorio label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--oro);
+            font-weight: bold;
+        }
+
+        .registro-obligatorio input {
+            width: 80%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* DISEÑO DE CATEGORÍAS */
+        .categoria-contenedor {
+            padding: 30px 10px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2.nombre-categoria {
+            color: var(--oro);
+            text-align: left;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        /* ANIMACIÓN DE MOVIMIENTO */
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .grid-finalistas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cajon-voto {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 15px;
+            width: 160px;
+            cursor: pointer;
+            animation: flotar 4s ease-in-out infinite;
+            transition: 0.3s;
+        }
+
+        .cajon-voto:nth-child(even) { animation-delay: 1s; }
+
+        .cajon-voto img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--oro);
+            margin-bottom: 10px;
+        }
+
+        .cajon-voto input[type="radio"] { display: none; }
+
+        .cajon-voto.seleccionado {
+            background: var(--oro);
+            color: black;
+            font-weight: bold;
+            animation-play-state: paused;
+        }
+
+        /* BOTÓN DE VOTAR */
+        .btn-votar {
+            background: var(--oro);
+            color: black;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-votar:hover { background: #f9e27d; }
+    </style>
+</head>
+<body>
+<form id="votosForm">
+<header>
+    <h1>GRAMMYS JUVENILES CRISTIANOS 2026</h1>
+    <div class="subtema">
+        "Ninguno tenga en poco tu juventud, sino sé ejemplo de los creyentes en palabra, conducta, amor, espíritu, fe y pureza." <br>
+        <strong>1 Timoteo 4:12</strong>
+    </div>
+</header>
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">CHICO MAS GUAPO</h2>
+        <div class="grid-finalistas">
+                 <label class="cajon-voto"><input type="radio" name="cat_chico_guapo" value="JARED" required>
+                 <img src="https://via.placeholder.com/150"><div>JARED</div></label>
+
+                <label class="cajon-voto"><input type="radio" name="cat_chicao_guapo"  value="ARTURO">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ARTURO</div>
+            </label>
+               <label class="cajon-voto"><input type="radio" name="cat_chico_guapo"  value="ALAN">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/482275305_1370007597786367_6651787360388442900_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=q-R2vmJfGvQQ7kNvwFBnv1y&_nc_oc=Adn_dx03uYUbZNUCzfyzV__sVlMyz1ZgnnrTPV8qpcXDpc1buXb9UOs4I7bXleSePbY&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=VjgKWqiKt4rhu9856VyaLg&oh=00_Afsd5P8bpmEhjrdgEuML7VjcxqfXP4_PxT28BNg9tFo1Fg&oe=698C887A" alt="Foto">
+                <div>ALAN</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chico_guapo" value="JOSMAR">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/626726693_1191626143043731_2006218602468367346_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2LfExv3glHkQ7kNvwGdboV5&_nc_oc=AdkSIpOGjGoeXehsZsJ4iYY4JPSaso_nru1xUs9PcjkrmuIJxsmjlvMAR_ePMskdjJs&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=sku6Nc4h0Nip64foUufMqQ&oh=00_AfvCw8X9YvCcwjvhnjTYeijYIPsO1nOn9Ux37z2yR6QEfw&oe=698D5E98" alt="Foto">
+                <div>JOSMAR</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chico_guapo" value="ESTEBAN">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ESTEBAN</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chico_guapo" value="ALFREDO">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/602350045_858573840306407_1371935060586719583_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=9FDiFgLUEGMQ7kNvwFLZU5L&_nc_oc=AdmAFEmUmp5VLLZyfVkf9rosGqm36H9TOOXnyVquq4WhVm14NZ-UlBxc2msjRE3apmE&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=rFPdQAS_T32uDAeRKuATUg&oh=00_AfsPfggNBQmkbccui9SnjNNBvE9RYKJjvhARwhfijVlh6Q&oe=698D4F85" alt="Foto">
+                <div>ALFREDO</div>
+            </label>
+        </div>
+    </div>
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">CHICA MAS GUAPA</h2>
+        <div class="grid-finalistas">
+            <label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="MARTHA" required>
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/620577474_1083802670538931_3073858943034346199_n.jpg?ccb=11-4&oh=01_Q5Aa3wFYDGIvk8zbZxUjdxQv0wnK9bE6QZb8VdTjo8YsHyWnbQ&oe=6993F436&_nc_sid=5e03e0&_nc_cat=104" alt="Foto">
+                <div>MARTHA</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="YULIANA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>YULIANA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="DANIELA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>DANIELA</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="RENATA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>RENATA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="YOSELIN" >
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/628189655_1191626156377063_981736037445144341_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OoZPVWeqQMIQ7kNvwFgcjsm&_nc_oc=Admiam6fxClpBladLNm7-j61HYuB5oI2hHM7JyrPv-juohYJVVrW4GLfuO2v_oRe9Zo&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=R4O23u0MffZwV-gorTGOMg&oh=00_AftzTQlANN9QTsRWDRtO26rIlYMap7BHQbUW5kgdelwFxg&oe=698D3E3F" alt="Foto">
+                <div>YOSELIN</div>
+            </label>
+            <label class="cajon-voto">
+               <input type="radio" name="cat_chica_guapa" value="EMILY">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>EMILY</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="BIVIANA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>BIVIANA</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_chica_guapa" value="KENDRA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>KENDRA</div>
+            </label>
+        </div>
+    </div>
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">JOVEN SERVIDOR</h2>
+        <div class="grid-finalistas">
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="RENATA" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>RENATA</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="ELIZABETH">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ELIZABETH</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="DANIELA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>DANIELA</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="YULIANA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>YULIANA</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="REBECA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>REBECA</div>
+            </label><label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="YOSELIN" >
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/628189655_1191626156377063_981736037445144341_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OoZPVWeqQMIQ7kNvwFgcjsm&_nc_oc=Admiam6fxClpBladLNm7-j61HYuB5oI2hHM7JyrPv-juohYJVVrW4GLfuO2v_oRe9Zo&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=R4O23u0MffZwV-gorTGOMg&oh=00_AftzTQlANN9QTsRWDRtO26rIlYMap7BHQbUW5kgdelwFxg&oe=698D3E3F" alt="Foto">
+                <div>YOSELIN</div>
+            </label>
+            <label class="cajon-voto">
+               <input type="radio" name="cat_joven_servidor" value="EMILY">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>EMILY</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="MARTHA" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/620577474_1083802670538931_3073858943034346199_n.jpg?ccb=11-4&oh=01_Q5Aa3wFYDGIvk8zbZxUjdxQv0wnK9bE6QZb8VdTjo8YsHyWnbQ&oe=6993F436&_nc_sid=5e03e0&_nc_cat=104" alt="Foto">
+                <div>MARTHA</div>
+            </label>
+            <label class="cajon-voto">
+               <input type="radio" name="cat_joven_servidor" value="BIVIANA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>BIVIANA</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="KENDRA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>KENDRA</div>
+            </label>
+            <label class="cajon-voto">
+               <input type="radio" name="cat_joven_servidor" value="ARLETTE">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/568726788_1336639201237501_3046587584091568766_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ozY5zNYCkcoQ7kNvwFiHWdr&_nc_oc=Adn0kmZBGEJXks9CLSUAcN_LF2dbswm3diiI138JbcKsFzRBWROLHLRobSHkPBdVeAc&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=aLtqh6Oku2PrW_wKGPQn4g&oh=00_AfsioxNfIoqeifyO9Gx9genh5WiKXOWMYY65t_7TbH4eaA&oe=698D65B6" alt="Foto">
+                <div>ARLETTE</div>
+            </label>
+    <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="KEISY">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>KEISY</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="JARED" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JARED</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="JAVIER" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JAVIER</div>
+            </label>
+            <label class="cajon-voto">
+               <input type="radio" name="cat_joven_servidor" value="ANGEL">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/514254415_1369877050739464_5580031800138664639_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=7kwCpwsy3YwQ7kNvwFkZZ1v&_nc_oc=AdllL98pWCeSU_0stQEv9P1ib_-NYVTFby2GffsBfuXXLMFGIk902lSbSKDp87IoSIw&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=Tt9PMZ-hQSSqocha8ZqTRQ&oh=00_AfsqwYwP4FjB3IQLoNf4BxrEzimJRldC5TR_9od45ZReYg&oe=698CA9B7" alt="Foto">
+                <div>ANGEL</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="ALAN" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ALAN</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="ARTURO">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ARTURO</div>
+            </label>
+ <label class="cajon-voto">
+               <input type="radio" name="cat_joven_servidor" value="ALFREDO" >
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/602350045_858573840306407_1371935060586719583_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=9FDiFgLUEGMQ7kNvwFLZU5L&_nc_oc=AdmAFEmUmp5VLLZyfVkf9rosGqm36H9TOOXnyVquq4WhVm14NZ-UlBxc2msjRE3apmE&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=rFPdQAS_T32uDAeRKuATUg&oh=00_AfsPfggNBQmkbccui9SnjNNBvE9RYKJjvhARwhfijVlh6Q&oe=698D4F85" alt="Foto">
+                <div>ALFREDO</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="JOSMAR">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/626726693_1191626143043731_2006218602468367346_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2LfExv3glHkQ7kNvwGdboV5&_nc_oc=AdkSIpOGjGoeXehsZsJ4iYY4JPSaso_nru1xUs9PcjkrmuIJxsmjlvMAR_ePMskdjJs&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=sku6Nc4h0Nip64foUufMqQ&oh=00_AfvCw8X9YvCcwjvhnjTYeijYIPsO1nOn9Ux37z2yR6QEfw&oe=698D5E98" alt="Foto">
+                <div>JOSMAR</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="JUAN" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/491883714_1283259686805903_1916774115613891612_n.jpg?ccb=11-4&oh=01_Q5Aa3wF7WWp3nLcM4JJyS2JGk_BX5kxQ0NZDLOe5R_jF5CMT1A&oe=6993BE77&_nc_sid=5e03e0&_nc_cat=103" alt="Foto">
+                <div>JUAN</div>
+            </label>
+            <label class="cajon-voto">
+                <input type="radio" name="cat_joven_servidor" value="ESTEBAN">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ESTEBAN</div>
+            </label>
+        </div>
+    </div>
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">JOVEN CONOCEDOR DE LA BIBLIA</h2>
+        <div class="grid-finalistas">
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_conocedor_de_la_biblia" value="YULIANA" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>YULIANA</div>
+            </label>
+ <label class="cajon-voto">
+               <input type="radio" name="cat_joven_conocedor_de_la_biblia" value="REBECA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>REBECA</div>
+            </label>
+<label class="cajon-voto">
+               <input type="radio" name="cat_joven_conocedor_de_la_biblia" value="JARED" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JARED</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_conocedor_de_la_biblia" value="ARLETTE">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/568726788_1336639201237501_3046587584091568766_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ozY5zNYCkcoQ7kNvwFiHWdr&_nc_oc=Adn0kmZBGEJXks9CLSUAcN_LF2dbswm3diiI138JbcKsFzRBWROLHLRobSHkPBdVeAc&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=aLtqh6Oku2PrW_wKGPQn4g&oh=00_AfsioxNfIoqeifyO9Gx9genh5WiKXOWMYY65t_7TbH4eaA&oe=698D65B6" alt="Foto">
+                <div>ARLETTE</div>
+            </label>
+<label class="cajon-voto">
+               <input type="radio" name="cat_joven_conocedor_de_la_biblia" value="MARTHA" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/620577474_1083802670538931_3073858943034346199_n.jpg?ccb=11-4&oh=01_Q5Aa3wFYDGIvk8zbZxUjdxQv0wnK9bE6QZb8VdTjo8YsHyWnbQ&oe=6993F436&_nc_sid=5e03e0&_nc_cat=104" alt="Foto">
+                <div>MARTHA</div>
+            </label>
+        </div>
+    </div>
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">JOVEN ADORADOR</h2>
+        <div class="grid-finalistas">
+         <label class="cajon-voto">
+                <input type="radio" name="cat_joven_adorador" value="MARTHA" required>
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/620577474_1083802670538931_3073858943034346199_n.jpg?ccb=11-4&oh=01_Q5Aa3wFYDGIvk8zbZxUjdxQv0wnK9bE6QZb8VdTjo8YsHyWnbQ&oe=6993F436&_nc_sid=5e03e0&_nc_cat=104" alt="Foto">
+                <div>MARTHA</div>
+            </label>
+<label class="cajon-voto">
+               <input type="radio" name="cat_joven_adorador" value="ELIZABETH">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ELIZABETH</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_adorador" value="YOSELIN" >
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/628189655_1191626156377063_981736037445144341_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OoZPVWeqQMIQ7kNvwFgcjsm&_nc_oc=Admiam6fxClpBladLNm7-j61HYuB5oI2hHM7JyrPv-juohYJVVrW4GLfuO2v_oRe9Zo&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=R4O23u0MffZwV-gorTGOMg&oh=00_AftzTQlANN9QTsRWDRtO26rIlYMap7BHQbUW5kgdelwFxg&oe=698D3E3F" alt="Foto">
+                <div>YOSELIN</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_adorador" value="JOSMAR">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/626726693_1191626143043731_2006218602468367346_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2LfExv3glHkQ7kNvwGdboV5&_nc_oc=AdkSIpOGjGoeXehsZsJ4iYY4JPSaso_nru1xUs9PcjkrmuIJxsmjlvMAR_ePMskdjJs&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=sku6Nc4h0Nip64foUufMqQ&oh=00_AfvCw8X9YvCcwjvhnjTYeijYIPsO1nOn9Ux37z2yR6QEfw&oe=698D5E98" alt="Foto">
+                <div>JOSMAR</div>
+            </label>
+ <label class="cajon-voto">
+               <input type="radio" name="cat_joven_adorador" value="JUAN" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/491883714_1283259686805903_1916774115613891612_n.jpg?ccb=11-4&oh=01_Q5Aa3wFtO3rHy527P07SMjrl0iaKswgnmoDV6yahO4lQQ2ic5A&oe=6993F6B7&_nc_sid=5e03e0&_nc_cat=103" alt="Foto">
+                <div>JUAN</div>
+            </label>
+
+<label class="cajon-voto">
+               <input type="radio" name="cat_joven_adorador" value="REBECA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>REBECA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_adorador" value="KEISY" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>KEISY</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_adorador" value="JAVIER" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JAVIER</div>
+            </label>
+        </div>
+    </div>
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">EL JOVEN MAS ALEGRE</h2>
+        <div class="grid-finalistas">
+           <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_alegre" value="ALAN" required>
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/482275305_1370007597786367_6651787360388442900_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=q-R2vmJfGvQQ7kNvwFBnv1y&_nc_oc=Adn_dx03uYUbZNUCzfyzV__sVlMyz1ZgnnrTPV8qpcXDpc1buXb9UOs4I7bXleSePbY&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=VjgKWqiKt4rhu9856VyaLg&oh=00_Afsd5P8bpmEhjrdgEuML7VjcxqfXP4_PxT28BNg9tFo1Fg&oe=698C887A" alt="Foto">
+                <div>ALAN</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_alegre" value="MARTHA" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/620577474_1083802670538931_3073858943034346199_n.jpg?ccb=11-4&oh=01_Q5Aa3wFYDGIvk8zbZxUjdxQv0wnK9bE6QZb8VdTjo8YsHyWnbQ&oe=6993F436&_nc_sid=5e03e0&_nc_cat=104" alt="Foto">
+                <div>MARTHA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_alegre" value="YULIANA">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>YULIANA</div>
+            </label>
+        </div>
+    </div>
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">EL JOVEN MAS IMPUNTUAL</h2>
+        <div class="grid-finalistas">
+<label class="cajon-voto">
+               <input type="radio" name="cat_el_joven_mas_impuntual" value="YULIANA" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>YULIANA</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_impuntual" value="DANIELA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>DANIELA</div>
+            </label>
+   <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_impuntual" value="EMILY">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>EMILY</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_impuntual" value="JARED" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JARED</div>
+            </label>
+        </div>
+    </div>
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">EL JOVEN MAS CALLADO </h2>
+        <div class="grid-finalistas">
+           <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_callado" value="REBECA" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>REBECA</div>
+            </label> 
+  <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_callado" value="RENATA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>RENATA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_callado" value="BIVIANA" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>BIVIANA</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_callado" value="ARTURO">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ARTURO</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_callado" value="JOSMAR">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/626726693_1191626143043731_2006218602468367346_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2LfExv3glHkQ7kNvwGdboV5&_nc_oc=AdkSIpOGjGoeXehsZsJ4iYY4JPSaso_nru1xUs9PcjkrmuIJxsmjlvMAR_ePMskdjJs&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=sku6Nc4h0Nip64foUufMqQ&oh=00_AfvCw8X9YvCcwjvhnjTYeijYIPsO1nOn9Ux37z2yR6QEfw&oe=698D5E98" alt="Foto">
+                <div>JOSMAR</div>
+            </label>
+        </div>
+    </div>
+
+
+<div class="categoria-contenedor">
+        <h2 class="nombre-categoria">EL JOVEN MAS COMELON</h2>
+        <div class="grid-finalistas">
+           <label class="cajon-voto">
+                <input type="radio" name="cat_joven_mas_comelon" value="JAVIER" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JAVIER</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_joven_mas_comelon" value="JOSMAR">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/626726693_1191626143043731_2006218602468367346_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2LfExv3glHkQ7kNvwGdboV5&_nc_oc=AdkSIpOGjGoeXehsZsJ4iYY4JPSaso_nru1xUs9PcjkrmuIJxsmjlvMAR_ePMskdjJs&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=sku6Nc4h0Nip64foUufMqQ&oh=00_AfvCw8X9YvCcwjvhnjTYeijYIPsO1nOn9Ux37z2yR6QEfw&oe=698D5E98" alt="Foto">
+                <div>JOSMAR</div>
+            </label>
+ <label class="cajon-voto">
+                <input type="radio" name="cat_joven_mas_comelon" value="JUAN" >
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/491883714_1283259686805903_1916774115613891612_n.jpg?ccb=11-4&oh=01_Q5Aa3wFtO3rHy527P07SMjrl0iaKswgnmoDV6yahO4lQQ2ic5A&oe=6993F6B7&_nc_sid=5e03e0&_nc_cat=103" alt="Foto">
+                <div>JUAN</div>
+            </label>
+        </div>
+    </div>
+    <div class="categoria-contenedor">
+        <h2 class="nombre-categoria">EL JOVEN MAS SOCIABLE</h2>
+        <div class="grid-finalistas">
+             <label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_sociable" value="ESTEBAN" required>
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>ESTEBAN</div>
+            </label>
+<label class="cajon-voto">
+                 <input type="radio" name="cat_el_joven_mas_sociable" value="YOSELIN" >
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/628189655_1191626156377063_981736037445144341_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OoZPVWeqQMIQ7kNvwFgcjsm&_nc_oc=Admiam6fxClpBladLNm7-j61HYuB5oI2hHM7JyrPv-juohYJVVrW4GLfuO2v_oRe9Zo&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=R4O23u0MffZwV-gorTGOMg&oh=00_AftzTQlANN9QTsRWDRtO26rIlYMap7BHQbUW5kgdelwFxg&oe=698D3E3F" alt="Foto">
+                <div>YOSELIN</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_el_joven_mas_sociable" value="ANGEL">
+                <img src="https://scontent.fver1-1.fna.fbcdn.net/v/t39.30808-6/514254415_1369877050739464_5580031800138664639_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=7kwCpwsy3YwQ7kNvwFkZZ1v&_nc_oc=AdllL98pWCeSU_0stQEv9P1ib_-NYVTFby2GffsBfuXXLMFGIk902lSbSKDp87IoSIw&_nc_zt=23&_nc_ht=scontent.fver1-1.fna&_nc_gid=Tt9PMZ-hQSSqocha8ZqTRQ&oh=00_AfsqwYwP4FjB3IQLoNf4BxrEzimJRldC5TR_9od45ZReYg&oe=698CA9B7" alt="Foto">
+                <div>ANGEL</div>
+            </label>
+        </div>
+    </div>
+   <div class="categoria-contenedor">
+        <h2 class="nombre-categoria">LA MEJOR PAREJA</h2>
+        <div class="grid-finalistas">
+             <label class="cajon-voto">
+                 <input type="radio" name="cat_la_mejor_pareja" value="ARLETTE Y ANGEL" required>
+                <img src="https://media-dfw6-1.cdn.whatsapp.net/v/t61.24694-24/621440120_2048976155895569_3869075511938110913_n.jpg?ccb=11-4&oh=01_Q5Aa3wEixqZBmVKE67TiiSqqSi9mcqWgsRpn7bCMtrQQIO9-nQ&oe=6993EFA2&_nc_sid=5e03e0&_nc_cat=109" alt="Foto">
+                <div>ARLETTE Y ANGEL</div>
+            </label>
+<label class="cajon-voto">
+                 <input type="radio" name="cat_la_mejor_pareja" value="JUAN Y NIMSI" >
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JUAN Y NIMSI</div>
+            </label>
+<label class="cajon-voto">
+                 <input type="radio" name="cat_la_mejor_pareja" value="REBECA Y SEBASTIAN">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>REBECA Y SEBASTIAN</div>
+            </label>
+<label class="cajon-voto">
+                <input type="radio" name="cat_la_mejor_pareja" value="JAVIER Y KEISY">
+                <img src="https://via.placeholder.com/150" alt="Foto">
+                <div>JAVIER Y KEISY</div>
+</label>
+        </div>
+    </div>
+<div class="registro-obligatorio">
+        <label>✅ PARA VALIDAR TU VOTO:</label>
+        <p style="font-size: 0.9rem; color: #bdc3c7;">Ingresa tu WhatsApp para finalizar</p>
+        <input type="tel" name="NUMERO_WHATSAPP" placeholder="Tu número a 10 dígitos" pattern="[0-9]{10,15}" required>
+        <br>
+        <button type="submit" class="btn-votar" id="btnEnviar">ENVIAR MI VOTACIÓN</button>
+    </div>
+</form>
+
+<div id="pantalla-gracias" style="display: none; padding: 100px 20px;">
+    <div style="background: #1a1a1a; border: 2px solid var(--oro); border-radius: 20px; padding: 40px; max-width: 500px; margin: auto;">
+        <h2 style="color: var(--oro); font-size: 2rem;">¡VOTO REGISTRADO!</h2>
+        <p style="font-size: 1.5rem; margin: 20px 0;">Gracias por tu votación.</p>
+        <p style="color: var(--oro); font-size: 1.2rem; font-style: italic;">"Dios le bendiga"</p>
+        <div style="font-size: 40px; margin-top: 20px;">🙌✨</div>
+    </div>
+</div>
+
+<script>
+    // 1. Manejo visual de selección
+    document.querySelectorAll('.cajon-voto').forEach(opcion => {
+        opcion.addEventListener('click', function() {
+            const radio = this.querySelector('input');
+            const name = radio.name;
+            
+            // Desmarcar otros en la misma categoría
+            document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.parentElement.classList.remove('seleccionado');
+            });
+            
+            // Marcar este
+            radio.checked = true;
+            this.classList.add('seleccionado');
+        });
+    });
+
+    // 2. Envío de datos
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzr43n7BtwFqrDLVD58Sp8POol_EjfIsj8aXx2w1gHo3DhjV9CjgOWYxUjqnucXxAR9/exec';
+    const form = document.getElementById('votosForm');
+    const pantallaGracias = document.getElementById('pantalla-gracias');
+    const cabecera = document.getElementById('cabecera');
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('btnEnviar');
+        btn.innerText = "ENVIANDO...";
+        btn.disabled = true;
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              form.style.display = 'none';
+              cabecera.style.display = 'none';
+              pantallaGracias.style.display = 'block';
+              window.scrollTo(0,0);
+          })
+          .catch(error => {
+              alert("Error al enviar. Intenta de nuevo.");
+              btn.disabled = false;
+              btn.innerText = "ENVIAR MI VOTACIÓN";
+          });
+    };
+</script>
+
+</body>
+</html>
