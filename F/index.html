@@ -575,19 +575,7 @@
     });
 
 <script>
-    // 1. Lógica visual de selección
-    const cajones = document.querySelectorAll('.cajon-voto');
-    cajones.forEach(cajon => {
-        cajon.addEventListener('click', function() {
-            const radio = this.querySelector('input[type="radio"]');
-            const nombreGrupo = radio.name;
-            document.querySelectorAll(`input[name="${nombreGrupo}"]`).forEach(input => {
-                input.parentElement.classList.remove('seleccionado');
-            });
-            radio.checked = true;
-            this.classList.add('seleccionado');
-        });
-    });
+   
 
     // 2. Lógica de envío a Google Sheets
     const formulario = document.getElementById('votosForm');
@@ -624,6 +612,7 @@
 
 </body>
 </html>
+
 
 
 
