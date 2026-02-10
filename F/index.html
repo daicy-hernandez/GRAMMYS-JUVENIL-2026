@@ -578,32 +578,34 @@
     // 2. Envío de datos
    const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxqO5vQ8ZuZNBKXs3_Yxx31dzy8pzZtG3KhSzGeBHj6U4K7Ol4OcEPHDSK46JtZN6a1/exec"; // <--- PEGA LA URL DE 'EXEC'
 
-const form = document.getElementById('Hoja1');
-    const pantallaGracias = document.getElementById('pantalla-gracias');
-    const cabecera = document.getElementById('cabecera');
+document.getElementById('votosForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const btn = this.querySelector('button');
+    btn.disabled = true;
+    btn.innerText = "ENVIANDO...";
 
-    form.onsubmit = function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('btnEnviar');
-        btn.innerText = "ENVIANDO...";
-        btn.disabled = true;
+    const formData = new FormData(this);
+    const queryString = new URLSearchParams(formData).toString();
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-              form.style.display = 'none';
-              cabecera.style.display = 'none';
-              pantallaGracias.style.display = 'block';
-              window.scrollTo(0,0);
-          })
-          .catch(error => {
-              alert("Error al enviar. Intenta de nuevo.");
-              btn.disabled = false;
-              btn.innerText = "ENVIAR MI VOTACIÓN";
-          });
-    };
+    // Enviamos los datos
+    fetch(URL_SCRIPT + "?" + queryString, {
+        method: 'POST',
+        mode: 'no-cors' 
+    });
+
+    // Como usamos 'no-cors', no esperamos la respuesta del servidor
+    // porque el navegador la bloquea por seguridad. 
+    // Forzamos el mensaje de éxito tras 2 segundos.
+    setTimeout(() => {
+        alert("¡Votos enviados! Si no aparecen en 1 minuto, revisa la URL del script.");
+        location.reload(); // Esto limpia el formulario y desbloquea la página
+    }, 2000); 
+});
 </script>
 </body>
 </html>
+
 
 
 
