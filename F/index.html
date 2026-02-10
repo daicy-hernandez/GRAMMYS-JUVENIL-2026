@@ -575,11 +575,10 @@
     });
 
     // 2. Envío de datos
-    const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbyue1AMcljvUlleS_uZPCjGwT_oxjIv779X_RzcU_XNq-yvc7mCGbwAFrGN1XcE-UKO/exec"; 
-console.log("Conectando a: " + URL_SCRIPT);
-    const pantallaGracias = document.getElementById('pantalla-gracias');
-    const cabecera = document.getElementById('cabecera');
+   const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxsvM6s3AKI2sP_f0wze2eLbhEamGkxrG1kE1F2ahD0urTwVDEyc6lO-F00pejilYl1/exec"; // <--- PEGA LA URL DE 'EXEC'
 
+document.getElementById('votosForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // ESTO EVITA QUE LA PÁGINA SE RECARGUE
     form.onsubmit = function(e) {
         e.preventDefault();
         const btn = document.getElementById('btnEnviar');
@@ -602,6 +601,7 @@ console.log("Conectando a: " + URL_SCRIPT);
 </script>
 </body>
 </html>
+
 
 
 
