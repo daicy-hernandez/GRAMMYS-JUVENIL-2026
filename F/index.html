@@ -573,57 +573,36 @@
             this.classList.add('seleccionado');
         });
     });
-   
 
-    // 2. Lógica de envío a Google Sheets
-    const formulario = document.getElementById('votosForm');
-    const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzT-34hYv1Elb0H7Jd1NRrNveWPOZoYuO92-50hSuZuK_HEvsIagIwi1VbOetb37uHs/exec"; // <--- PEGA TU URL AQUÍ
+    // 2. Envío de datos
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1xH5qhwXW8cOyWXiqLtCffMi0tmB7D4trgniUfcJ9xbSbEcpQcd3UfvSEn9gQxgYo/exec';
+    const form = document.getElementById('Hoja1');
+    const pantallaGracias = document.getElementById('pantalla-gracias');
+    const cabecera = document.getElementById('cabecera');
 
-  document.querySelectorAll('.cajon-voto input').forEach(radio => {
-        radio.addEventListener('change', function() {
-            // Buscamos todos los cajones de la MISMA categoría
-            const nombreGrupo = this.name;
-            document.querySelectorAll(`input[name="${nombreGrupo}"]`).forEach(input => {
-                input.parentElement.classList.remove('seleccionado');
-            });
-            
-            // Si está marcado, añadimos la clase al label (el cajón)
-            if (this.checked) {
-                this.parentElement.classList.add('seleccionado');
-            }
-        });
-    });
-
-    // --- LÓGICA PARA ENVIAR ---
-    document.getElementById('votosForm').addEventListener('submit', function(e) {
+    form.onsubmit = function(e) {
         e.preventDefault();
-        
         const btn = document.getElementById('btnEnviar');
-        btn.innerText = "PROCESANDO...";
+        btn.innerText = "ENVIANDO...";
         btn.disabled = true;
 
-        const formData = new FormData(this);
-        
-        // Convertimos FormData a parámetros de URL para Google Apps Script
-        const queryString = new URLSearchParams(formData).toString();
-
-        fetch(URL_SCRIPT + "?" + queryString, {
-            method: 'POST'
-        })
-        .then(res => {
-            alert("¡Votos enviados! Que Dios te bendiga.");
-            location.reload(); // Recarga para limpiar todo
-        })
-        .catch(err => {
-            // Google Apps Script suele dar error de CORS aunque funcione
-            // Si el alert de arriba no sale, pero los datos llegan, está bien.
-            alert("Votos enviados con éxito.");
-            location.reload();
-        });
-    });
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              form.style.display = 'none';
+              cabecera.style.display = 'none';
+              pantallaGracias.style.display = 'block';
+              window.scrollTo(0,0);
+          })
+          .catch(error => {
+              alert("Error al enviar. Intenta de nuevo.");
+              btn.disabled = false;
+              btn.innerText = "ENVIAR MI VOTACIÓN";
+          });
+    };
 </script>
 </body>
 </html>
+
 
 
 
