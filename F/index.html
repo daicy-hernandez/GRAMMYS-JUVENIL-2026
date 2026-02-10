@@ -574,31 +574,52 @@
         });
     });
 
-    // 2. Envío de datos
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx4_AErAISetj4J4eiisA1Nlj2tZLDpR9VaH3Qz6mSXz1DOXJLenTITVxugEjKV-q6A/exec';
-    const form = document.getElementById('Hoja1');
-    const pantallaGracias = document.getElementById('pantalla-gracias');
-    const cabecera = document.getElementById('cabecera');
+<script>
+    // 1. Lógica visual de selección
+    const cajones = document.querySelectorAll('.cajon-voto');
+    cajones.forEach(cajon => {
+        cajon.addEventListener('click', function() {
+            const radio = this.querySelector('input[type="radio"]');
+            const nombreGrupo = radio.name;
+            document.querySelectorAll(`input[name="${nombreGrupo}"]`).forEach(input => {
+                input.parentElement.classList.remove('seleccionado');
+            });
+            radio.checked = true;
+            this.classList.add('seleccionado');
+        });
+    });
 
-    form.onsubmit = function(e) {
+    // 2. Lógica de envío a Google Sheets
+    const formulario = document.getElementById('votosForm');
+    const URL_SCRIPT = "TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI"; // <--- PEGA TU URL AQUÍ
+
+    formulario.addEventListener('submit', function(e) {
         e.preventDefault();
-        const btn = document.getElementById('btnEnviar');
-        btn.innerText = "ENVIANDO...";
+        
+        const btn = e.target.querySelector('button');
+        btn.innerText = "ENVIANDO VOTOS...";
         btn.disabled = true;
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-              form.style.display = 'none';
-              cabecera.style.display = 'none';
-              pantallaGracias.style.display = 'block';
-              window.scrollTo(0,0);
-          })
-          .catch(error => {
-              alert("Error al enviar. Intenta de nuevo.");
-              btn.disabled = false;
-              btn.innerText = "ENVIAR MI VOTACIÓN";
-          });
-    };
+        const formData = new FormData(formulario);
+        const data = new URLSearchParams(formData);
+
+        fetch(URL_SCRIPT, {
+            method: 'POST',
+            mode: 'no-cors', // Necesario para Google Scripts
+            body: data
+        })
+        .then(() => {
+            alert("¡Votación exitosa! Dios te bendiga.");
+            formulario.reset();
+            document.querySelectorAll('.cajon-voto').forEach(c => c.classList.remove('seleccionado'));
+            btn.innerText = "ENVIAR MIS VOTOS";
+            btn.disabled = false;
+        })
+        .catch(error => {
+            alert("Hubo un error al enviar: " + error);
+            btn.disabled = false;
+        });
+    });
 </script>
 
 </body>
