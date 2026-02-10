@@ -577,36 +577,33 @@
     // 2. Envío de datos
    const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxsvM6s3AKI2sP_f0wze2eLbhEamGkxrG1kE1F2ahD0urTwVDEyc6lO-F00pejilYl1/exec"; // <--- PEGA LA URL DE 'EXEC'
 
-document.getElementById('votosForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const btn = this.querySelector('button');
-    btn.innerText = "ENVIANDO...";
-    btn.disabled = true;
+const form = document.getElementById('Hoja1');
+    const pantallaGracias = document.getElementById('pantalla-gracias');
+    const cabecera = document.getElementById('cabecera');
 
-    // Recogemos los datos del formulario
-    const formData = new FormData(this);
-    const params = new URLSearchParams(formData);
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('btnEnviar');
+        btn.innerText = "ENVIANDO...";
+        btn.disabled = true;
 
-    // Enviamos los datos usando una técnica llamada 'fetch' con los datos en la URL
-    fetch(URL_SCRIPT + "?" + params.toString(), {
-        method: 'POST', // Intentamos POST
-        mode: 'no-cors'
-    })
-    .then(() => {
-        // Como Google no responde por seguridad, nosotros forzamos el éxito
-        alert("¡Votos enviados con éxito! Dios te bendiga.");
-        location.reload(); 
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("Parece que hubo un error, pero revisa tu hoja de Excel.");
-        btn.disabled = false;
-        btn.innerText = "REINTENTAR ENVIAR";
-    });
-});</script>
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              form.style.display = 'none';
+              cabecera.style.display = 'none';
+              pantallaGracias.style.display = 'block';
+              window.scrollTo(0,0);
+          })
+          .catch(error => {
+              alert("Error al enviar. Intenta de nuevo.");
+              btn.disabled = false;
+              btn.innerText = "ENVIAR MI VOTACIÓN";
+          });
+    };
+</script>
 </body>
 </html>
+
 
 
 
